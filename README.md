@@ -1,55 +1,71 @@
-# PearlThoughts Email Service Challenge 🚀
+# Resilient Email Service 📬
 
-Welcome to the PearlThoughts Email Service Challenge repository! This project is a resilient email delivery backend system developed as part of the PearlThoughts internship challenge. Here, you'll find everything you need to understand, use, and contribute to this email service.
+Welcome to the **Resilient Email Service** repository!  
+This project was built as part of the **PearlThoughts Backend Developer Challenge**, with a focus on creating a fault-tolerant and scalable email delivery backend using JavaScript.
 
-[![Releases](https://img.shields.io/github/release/Ma-r684/pearlthoughts-email-service-challenge.svg)](https://github.com/Ma-r684/pearlthoughts-email-service-challenge/releases)
+---
 
-## Table of Contents
+## 📚 Table of Contents
+- [Project Overview](#project-overview)
+- [Core Features](#core-features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [API Usage](#api-usage)
+- [Development & Deployment](#development--deployment)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-1. [Overview](#overview)
-2. [Features](#features)
-3. [Technologies Used](#technologies-used)
-4. [Getting Started](#getting-started)
-5. [Usage](#usage)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Contact](#contact)
+---
 
-## Overview
+## 🔍 Project Overview
 
-The PearlThoughts Email Service is designed to handle email delivery efficiently and reliably. It uses modern serverless architecture, which allows for scalability and reduced operational overhead. This system integrates various AWS services and implements several design patterns to ensure resilience and performance.
+This service is designed to send emails in a **reliable and efficient** manner. It integrates essential backend engineering concepts like:
+- Retry mechanisms with backoff
+- Provider fallback
+- Request idempotency
+- Rate limiting
+- Status tracking
 
-## Features
+The goal is to ensure that emails are sent exactly once, even in the face of failure or high traffic.
 
-- **API Gateway**: Provides a unified interface for email delivery requests.
-- **AWS Lambda**: Serverless functions that process email sending.
-- **AWS SAM**: Simplifies deployment and management of serverless applications.
-- **Circuit Breaker**: Protects the system from failures in downstream services.
-- **Email Service**: Manages email composition and delivery.
-- **Idempotency**: Ensures that repeated requests do not result in duplicate emails.
-- **Queue System**: Handles asynchronous email processing.
-- **Rate Limiter**: Controls the rate of outgoing emails to prevent abuse.
-- **Retry Mechanism**: Automatically retries failed email deliveries.
+---
 
-## Technologies Used
+## 🚀 Core Features
 
-This project utilizes a variety of technologies to ensure a robust email service:
+✅ **Retry with Exponential Backoff**  
+✅ **Fallback to Secondary Email Provider**  
+✅ **Idempotent Email Sending (No Duplicates)**  
+✅ **Basic Rate Limiting**  
+✅ **Status Tracking by Email ID**  
 
-- **Node.js**: The core language for building the backend.
-- **Express**: Framework for building the API.
-- **AWS Services**: Including Lambda, S3, and DynamoDB.
-- **Queue Systems**: Such as Amazon SQS for handling email requests.
-- **Database**: DynamoDB for storing email metadata and logs.
+**Bonus Implementations:**
+- 🧯 Circuit Breaker Pattern  
+- 📜 Simple Logging  
+- 📥 Queuing System (In-Memory Simulation)
 
-## Getting Started
+---
 
-To get started with the PearlThoughts Email Service, follow these steps:
+## 🛠️ Tech Stack
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/Ma-r684/pearlthoughts-email-service-challenge.git
-   cd pearlthoughts-email-service-challenge
-   ```
+- **Node.js** – Server-side JavaScript
+- **Express** – REST API Framework
+- **UUID** – For idempotency keys
+- **In-Memory Store** – For status tracking and logging
+
+> This project uses mock email providers — no actual emails are sent.
+
+---
+
+## 🧑‍💻 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/SayaliPatil10/resilient-email-service.git
+cd resilient-email-service
+
 
 2. **Install Dependencies**:
    Make sure you have Node.js installed. Then run:
@@ -84,8 +100,8 @@ After deploying the service, you can use the API to send emails. Here’s a quic
 ```json
 {
   "to": "recipient@example.com",
-  "subject": "Hello World",
-  "body": "This is a test email."
+  "subject": "Test Email",
+  "body": "This is a demo message."
 }
 ```
 
@@ -93,7 +109,7 @@ After deploying the service, you can use the API to send emails. Here’s a quic
 ```bash
 curl -X POST https://your-api-gateway-url/send-email \
 -H "Content-Type: application/json" \
--d '{"to": "recipient@example.com", "subject": "Hello World", "body": "This is a test email."}'
+-d '{"to": "recipient@example.com", "subject": "Test Email", "body": "This is a demo message."}'
 ```
 
 ### Check Status
@@ -132,9 +148,10 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or inquiries, feel free to reach out:
 
-- **GitHub**: [Ma-r684](https://github.com/Ma-r684)
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
+GitHub: 
 
-For the latest updates and releases, visit the [Releases](https://github.com/Ma-r684/pearlthoughts-email-service-challenge/releases) section.
+Email: sayalipatil152209@example.com
+
+For the latest updates and releases, visit the [Releases](   ) section.
 
 Thank you for checking out the PearlThoughts Email Service Challenge! Your feedback and contributions are appreciated.
