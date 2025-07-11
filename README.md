@@ -152,6 +152,6 @@ GitHub:
 
 Email: sayalipatil152209@example.com
 
-For the latest updates and releases, visit the [Releases](   ) section.
+For the latest updates and releases, visit the [Releases](https://github.com/SayaliPatil10/resilient-email-service) section.
 
 Thank you for checking out the PearlThoughts Email Service Challenge! Your feedback and contributions are appreciated.
