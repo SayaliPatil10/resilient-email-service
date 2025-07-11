@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  EmailServiceApi:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: email-service-api
+      Handler: lambda.handler
+      Runtime: nodejs20.x
+      MemorySize: 512
+      Timeout: 10
+      CodeUri: .
+      Policies:
+        - AmazonDynamoDBFullAccess
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
